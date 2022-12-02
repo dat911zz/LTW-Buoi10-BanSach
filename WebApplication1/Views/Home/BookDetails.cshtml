@@ -1,0 +1,55 @@
+﻿@model WebApplication1.Models.Sach
+
+@{
+    ViewBag.Title = "BookDetails";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>BookDetails</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <img src="~/Contents/Images/HinhAnhSP/@Model.AnhBia" alt="Alternate Text" style="width: inherit" />
+        </div>
+        <div class="col-8" style="text-align: left">
+            <div class="row">
+                <span style="font-weight: bold">@Html.DisplayNameFor(model => model.TenSach)</span> :
+                @Model.TenSach
+
+            </div>
+            <div class="row">
+                <span style="font-weight: bold">
+                    @Html.DisplayNameFor(model => model.ChuDe.TenChuDe):&nbsp;
+                </span>
+                @Model.ChuDe.TenChuDe
+            </div>
+            <div class="row">
+                <span style="font-weight: bold">
+                    @Html.DisplayNameFor(model => model.NhaXuatBan.TenNXB):&nbsp;
+                </span>
+                @Model.TenSach
+            </div>
+            <div class="row">
+                <span style="font-weight: bold">
+                    Nội dung tóm tắt:&nbsp;
+                </span>
+                @Model.MoTa
+            </div>
+            <div class="row">
+                <span style="font-weight: bold">
+                    Giá bán:&nbsp;
+                </span>
+                <span style="color: red; font-weight: bold">
+                    @Model.GiaBan
+                </span>
+            </div>
+        </div>
+    </div>   
+</div>
+<div class="container" style="text-align: left; margin-left: 35px; margin-top: 30px">
+    <a class="btn btn-primary" href="@Url.Action("ThemGioHang", "GioHang", new { idSach = Model.MaSach, strURL = Request.Url.ToString() })">Mua Ngay
+    </a>
+    <a class="btn btn-primary" href="@Url.Action("Index", "Home")">Mua Tiếp
+    </a>
+</div>
+

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WebApplication1.Models.Sach>
+
+@{
+    ViewBag.Title = "SachTheoCD";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<h2>SachTheoCD</h2>
+@if (Model == null)
+{
+    <div>Không tìm thấy dữ liệu!</div>
+}
+else
+{
+    <div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-4">
+            <img src="~/Contents/Images/HinhAnhSP/@item.AnhBia" alt="Alternate Text" />
+            @Html.ActionLink("Xem chi tiết", "BookDetails", "Home", new { id = item.MaSach }, null)
+        </div>
+    }
+    </div>       
+}
+

@@ -1,0 +1,49 @@
+﻿<!--NAVIGATION-->
+<!-- <div class="container-fluid"> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand row" href="#"><img src="~/Contents/Images/LogoFaHaSa.JPG" width="100%" class="rounded" /></a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+            <li class="nav-item nav-link">
+                <a href="#">Trang chủ</a>
+            </li>
+            <li class="nav-item nav-link">
+                <a href="#">Đăng Ký</a>
+            </li>
+            <li class="nav-item nav-link">
+                <a href="#">Đăng Nhập</a>
+            </li>
+            <li class="nav-item nav-link">
+                <a href="#">Liên Hệ</a>
+            </li>
+            <li class="nav-item nav-link">
+                @*<a href="#">Giỏ Hàng</a>*@
+                <a href="@Url.Action("Index", "GioHang")">
+                    @Html.Action("GioHangPartial", "GioHang", null)               
+                </a>
+            </li>
+        </ul>
+
+
+        <input class="form-control" style="width:15%" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-link" type="submit"><img src="~/Contents/Images/search.JPG" /></button>
+
+    </div>
+
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+        <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Languages
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#"><img src="~/Contents/Images/VietNamFlag.JPG" />  VietNamese</a></li>
+                    <li><a class="dropdown-item" href="#"><img src="~/Contents/Images/EnglishFlag.JPG" />  English</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,13 @@
+﻿@model IEnumerable<WebApplication1.Models.Sach>
+
+<div class="container">
+    <div class="row">
+        @foreach (var sach in Model)
+        {
+        <div class="col-4">
+            <img src="~/Contents/Images/HinhAnhSP/@sach.AnhBia" alt="Alternate Text" />
+            @Html.ActionLink("Xem chi tiết", "BookDetails", "Home", new { id = sach.MaSach} , null)
+        </div>
+        }
+    </div>
+</div>
